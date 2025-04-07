@@ -1,0 +1,128 @@
+body {
+    font-family: Arial, sans-serif;
+    margin: 0;
+    padding: 0;
+    background-color: #f4f4f4;
+}
+
+
+/* Navbar Styles */
+nav {
+    background-color: #0056B3;
+    padding: 10px 0;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+    height: 70px;
+}
+
+.about_logo img {
+    height: 90px;
+    margin-left: 20px;
+}
+
+nav ul {
+    list-style-type: none;
+    margin: 0;
+    padding: 0;
+    display: flex;
+}
+
+nav ul li {
+    margin: 0 15px;
+    margin-right: 50px;
+}
+
+nav ul li a {
+    color: white;
+    text-decoration: none;
+    font-size: 18px;
+}
+
+nav ul li a:hover {
+    color: #ffcc00;
+}
+
+/* Analyze Container */
+.analyze-container {
+    text-align: center;
+    margin: 50px auto;
+    width: 50%;
+    padding: 40px;
+    background-color: rgba(1, 56, 114, 0.3);
+    box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.1);
+    border-radius: 8px;
+}
+
+.analyze-container h2 {
+    font-size: 24px;
+    color: #333;
+}
+
+.analyze-container textarea {
+    width: 100%;
+    padding: 10px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    font-size: 16px;
+    resize: none;
+    margin-top: 10px;
+}
+
+.analyze-container button {
+    margin-top: 15px;
+    padding: 10px 20px;
+    font-size: 18px;
+    color: white;
+    background-color: #007BFF;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+}
+
+.analyze-container button:hover {
+    background-color: #0056b3;
+}
+
+/* Footer */
+footer {
+    text-align: center;
+    background-color: #0056B3;
+    color: white;
+    padding: 10px 0;
+    position: absolute;
+    bottom: 0;
+    width: 100%;
+}
+
+/* Emoji Floating Animation */
+#emoji-container {
+    position: fixed;
+    bottom: 0;
+    left: 0;
+    width: 100%;
+    pointer-events: none;
+    z-index: 999;
+}
+
+.floating-emoji {
+    position: absolute;
+    bottom: 0;
+    font-size: 24px;
+    animation: floatUp 1.5s ease-in-out forwards;
+    opacity: 0.9;
+}
+
+@keyframes floatUp {
+    0% {
+        bottom: 0;
+        opacity: 1;
+        transform: translateY(0);
+    }
+    100% {
+        bottom: 100%;
+        opacity: 0;
+        transform: translateY(-100vh);
+    }
+}

@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Sentiment Analysis</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='analyze.css') }}">
+</head>
+<body>
+
+    <!-- Navbar -->
+    <nav>
+        <div class="about_logo">
+            <a href="{{ url_for('home') }}">
+                <img src="{{ url_for('static', filename='logo.png') }}" alt="Logo">
+            </a>
+        </div>
+        <ul>
+            <li><a href="{{ url_for('home') }}">Home</a></li>
+        </ul>
+    </nav>
+
+    <!-- Main Content -->
+    <div class="analyze-container">
+        <h2>Sentiment Analyzer</h2>
+        <form method="POST" action="{{ url_for('analyze') }}">
+            <textarea name="text-input" placeholder="Type your text here..." rows="6" required></textarea>
+            <button type="submit">Analyze</button>
+        </form>
+
+        {% if sentiment %}
+            <div class="result">
+                <h3>Predicted Sentiment:</h3>
+                <p class="sentiment">{{ sentiment }}</p>
+            </div>
+        {% endif %}
+    </div>
+
+
+    {% if sentiment %}
+        <div id="emoji-container"></div>
+        <script>
+            const sentiment = "{{ sentiment }}";
+            let emojiList = [];
+
+            if (sentiment.includes("Positive")) {
+                emojiList = ['😊', '🎉', '✨', '🥳', '💖'];
+            } else if (sentiment.includes("Negative")) {
+                emojiList = ['😢', '💔', '😭', '😞', '😩'];
+            } else if (sentiment.includes("Neutral")) {
+                emojiList = ['😐', '🌀', '😶', '🤔', '💬'];
+            }
+
+            const container = document.getElementById('emoji-container');
+
+            function createEmoji() {
+                const emoji = document.createElement('div');
+                emoji.classList.add('floating-emoji');
+                emoji.innerText = emojiList[Math.floor(Math.random() * emojiList.length)];
+                emoji.style.left = Math.random() * 100 + 'vw';
+                emoji.style.animationDuration = '5s';
+                container.appendChild(emoji);
+                setTimeout(() => container.removeChild(emoji), 5000);
+            }
+
+            setInterval(createEmoji, 300);
+            // Stop generating emojis after 2.5 seconds
+        setTimeout(() => {
+            clearInterval(emojiInterval);
+        }, 1000);
+        </script>
+    {% endif %}
+
+    <!-- Footer -->
+    <footer>
+        <p>&copy; 2024 Your Website. All Rights Reserved.</p>
+    </footer>
+</body>
+</html>

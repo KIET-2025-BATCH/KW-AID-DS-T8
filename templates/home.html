@@ -1,0 +1,93 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Home</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='home.css') }}?v=3">
+</head>
+<body>
+
+    <!-- Navbar -->
+    <nav>
+        <div class="logo">
+            <img src="{{ url_for('static', filename='logo.png') }}" alt="Logo">
+        </div>
+        <ul>
+            <li><a href="#">Home</a></li>
+            <li><a href="#about">About Us</a></li>
+        </ul>
+    </nav>
+
+    <!-- Intro Section -->
+    <div class="intro">
+        <h1>Welcome to Our Website</h1>
+        <p>Discover insights and analyze your text efficiently.</p>
+        <a href="{{ url_for('analyze') }}" class="explore-btn">Explore</a>
+    </div>
+
+    <!-- About Us Section -->
+    <section id="about">
+        <h2>Meet Our Team</h2>
+        <div class="developer-profiles">
+
+            <!-- Developer 1 -->
+            <div class="developer">
+                <img src="{{ url_for('static', filename='developer_1.jpeg') }}" alt="Developer 1">
+                <h3>Charishma Chikkala</h3>
+                <div class="social-links">
+                    <a href="https://github.com/johndoe" target="_blank">GitHub</a>
+                    <a href="https://linkedin.com/in/johndoe" target="_blank">LinkedIn</a>
+                </div>
+            </div>
+
+            <!-- Developer 2 -->
+            <div class="developer">
+                <img src="{{ url_for('static', filename='developer_2.jpeg') }}" alt="Developer 2">
+                <h3>Santhoshi</h3>
+                <div class="social-links">
+                    <a href="https://github.com/janesmith" target="_blank">GitHub</a>
+                    <a href="https://linkedin.com/in/janesmith" target="_blank">LinkedIn</a>
+                </div>
+            </div>
+
+            <!-- Developer 3 -->
+            <div class="developer">
+                <img src="{{ url_for('static', filename='developer_3.jpeg') }}" alt="Developer 3">
+                <h3>Satwika</h3>
+                <div class="social-links">
+                    <a href="https://www.linkedin.com/in/satwika-gamidi-56116523b" target="_blank">GitHub</a>
+                    <a href="https://github.com/Satwika2004" target="_blank">LinkedIn</a>
+                </div>
+            </div>
+
+            <!-- Developer 4 -->
+            <div class="developer">
+                <img src="{{ url_for('static', filename='developer_4.jpeg') }}" alt="Developer 3">
+                <h3>Mounika</h3>
+                <div class="social-links">
+                    <a href="https://github.com/Kotipallimounika" target="_blank">GitHub</a>
+                    <a href="https://www.linkedin.com/in/kotipalli-surya-chakra-mounika-7411a8254?utm_source=share&utm_campaign=share_via&utm_content=profile&utm_medium=android_app" target="_blank">LinkedIn</a>
+                </div>
+            </div>
+
+            <!-- Developer 5 -->
+            <div class="developer">
+                <img src="{{ url_for('static', filename='developer_5.jpeg') }}" alt="Developer 3">
+                <h3>Kalyani</h3>
+                <div class="social-links">
+                    <a href="https://github.com/ChittiKalyani-P" target="_blank">GitHub</a>
+                    <a href="https://www.linkedin.com/in/p-chitti-kalyani-2918b3228?utm_source=share&utm_campaign=share_via&utm_content=profile&utm_medium=android_app" target="_blank">LinkedIn</a>
+                </div>
+            </div>
+
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer>
+        <p>&copy; 2024 Your Website. All Rights Reserved.</p>
+    </footer>
+
+</body>
+</html>
